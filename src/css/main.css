@@ -1,17 +1,50 @@
+/* ====== FORM ====== */
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px auto 40px;
+}
+
+.form input {
+  width: 300px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form button {
+  padding: 10px 20px;
+  background: #4e75ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ====== GALLERY ====== */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 24px;
   list-style: none;
   padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .gallery-item {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Image */
 .gallery-item img {
   display: block;
   width: 100%;
@@ -19,26 +52,49 @@
   object-fit: cover;
 }
 
+/* ====== INFO BLOCK ====== */
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  font-size: 14px;
+  background: #fafafa;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.info-item b {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ====== LOAD MORE BUTTON ====== */
 .load-more {
   display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
+  margin: 40px auto 10px;
+  padding: 10px 26px;
   height: 40px;
   background: #4e75ff;
   color: white;
   border-radius: 8px;
   border: none;
+  font-size: 16px;
   cursor: pointer;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
+/* ====== LOADER ====== */
 .loader {
-  width: 32px;
-  height: 32px;
-  margin: 20px auto;
+  width: 36px;
+  height: 36px;
+  margin: 20px auto 40px;
   border-radius: 50%;
   border: 4px solid #ccc;
   border-top-color: #4e75ff;

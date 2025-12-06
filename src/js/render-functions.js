@@ -14,11 +14,22 @@ export function createGallery(images) {
   const markup = images
     .map(
       img => `
-   <li class="gallery-item">
-      <a href="${img.largeImageURL}">
-        <img src="${img.webformatURL}" alt="${img.tags}" />
-      </a>
-   </li>`
+      <li class="gallery-item">
+        <a class="gallery-link" href="${img.largeImageURL}">
+          <img
+            class="gallery-image"
+            src="${img.webformatURL}"
+            alt="${img.tags}"
+            loading="lazy"
+          />
+        </a>
+        <div class="info">
+          <p class="info-item"><b>Likes</b> ${img.likes}</p>
+          <p class="info-item"><b>Views</b> ${img.views}</p>
+          <p class="info-item"><b>Comments</b> ${img.comments}</p>
+          <p class="info-item"><b>Downloads</b> ${img.downloads}</p>
+        </div>
+      </li>`
     )
     .join('');
 
@@ -31,17 +42,17 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.remove('is-hidden');
+  loader.classList.remove('hidden');
 }
 
 export function hideLoader() {
-  loader.classList.add('is-hidden');
+  loader.classList.add('hidden');
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.remove('is-hidden');
+  loadMoreBtn.classList.remove('hidden');
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.add('is-hidden');
+  loadMoreBtn.classList.add('hidden');
 }
